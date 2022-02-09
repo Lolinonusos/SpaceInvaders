@@ -37,7 +37,7 @@ void ABullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	FVector NewLocation = GetActorLocation();
-	NewLocation += GetActorForwardVector() * Speed * DeltaTime;
+	NewLocation += GetActorForwardVector() * Speed * DeltaTime; // Makes sure the bullet moves forward
 	SetActorLocation(NewLocation);
 	TimeLived += DeltaTime;
 		

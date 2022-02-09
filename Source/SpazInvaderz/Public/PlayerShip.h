@@ -45,6 +45,9 @@ public:
 	float PlayerSpeed = 5.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
+	int PlayerHealth = 3;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
 	int BulletAmount = 30;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
