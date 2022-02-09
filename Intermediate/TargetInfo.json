@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "SpazInvaderz",
+			"Path": "C:\\Users\\linus\\Desktop\\Unreal projects\\SpazInvaderz\\Source\\SpazInvaderz.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "SpazInvaderzEditor",
+			"Path": "C:\\Users\\linus\\Desktop\\Unreal projects\\SpazInvaderz\\Source\\SpazInvaderzEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

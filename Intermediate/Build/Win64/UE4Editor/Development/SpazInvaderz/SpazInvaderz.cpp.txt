@@ -1,0 +1,2 @@
+C:\Users\linus\Desktop\Unreal projects\SpazInvaderz\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Definitions.SpazInvaderz.h
+C:\Users\linus\Desktop\Unreal projects\SpazInvaderz\Source\SpazInvaderz\SpazInvaderz.h
