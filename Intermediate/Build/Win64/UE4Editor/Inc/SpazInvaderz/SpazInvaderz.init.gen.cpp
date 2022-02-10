@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeSpazInvaderz_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xF38C15B0,
-				0x67273898,
+				0x912138E9,
+				0xC3855F8F,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

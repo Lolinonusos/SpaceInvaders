@@ -1,0 +1,3 @@
+D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Definitions.SpazInvaderz.h
+D:\Unreal projects\SpaceInvaders\Source\SpazInvaderz\Public\Brick.h
+D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Inc\SpazInvaderz\Brick.generated.h

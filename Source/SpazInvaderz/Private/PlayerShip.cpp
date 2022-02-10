@@ -21,15 +21,15 @@ APlayerShip::APlayerShip()
 	PlayerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PlayerMesh"));
 	SetRootComponent(PlayerMesh);
 
-	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArmComp"));
-	SpringArm->bDoCollisionTest = false;
-	SpringArm->CameraLagSpeed = 5.f;
-	SpringArm->SetupAttachment(PlayerMesh);
-	SpringArm->SetRelativeRotation(FRotator(-45.f, 0.f, 0.f));
+	//SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArmComp"));
+	//SpringArm->bDoCollisionTest = false;
+	//SpringArm->CameraLagSpeed = 5.f;
+	//SpringArm->SetupAttachment(PlayerMesh);
+	//SpringArm->SetRelativeRotation(FRotator(-45.f, 0.f, 0.f));
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->bUsePawnControlRotation = false;
-	Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
+	//Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
 
 	
 }
@@ -57,6 +57,10 @@ static void InitializeDefaultPawnInputBinding()
 void APlayerShip::BeginPlay()
 {
 	Super::BeginPlay();
+	
+	// Fixed camera position
+	Camera->SetRelativeLocation(FVector(0.0f, 0.0f, 1000.0f));
+	Camera->SetRelativeRotation(FRotator(-45.f, 0.0f, 0.0f));
 
 	InitLocation = PlayerMesh->GetComponentLocation();
 	
