@@ -42,7 +42,7 @@ public:
 	UCameraComponent* Camera = nullptr;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
-	float PlayerSpeed = 5.f;
+	float PlayerSpeed = 10.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
 	int PlayerHealth = 3;

@@ -42,14 +42,16 @@ static void InitializeDefaultPawnInputBinding()
 		bindingsAdded = true;
 
 
-		UPlayerInput::AddEngineDefinedAxisMapping(FInputAxisKeyMapping("MoveX", EKeys::W, 1.f));
-		UPlayerInput::AddEngineDefinedAxisMapping(FInputAxisKeyMapping("MoveX", EKeys::S, -1.f));
+		//UPlayerInput::AddEngineDefinedAxisMapping(FInputAxisKeyMapping("MoveX", EKeys::W, 1.f));
+		//UPlayerInput::AddEngineDefinedAxisMapping(FInputAxisKeyMapping("MoveX", EKeys::S, -1.f));
 
 		UPlayerInput::AddEngineDefinedAxisMapping(FInputAxisKeyMapping("MoveY", EKeys::D, 1.f));
 		UPlayerInput::AddEngineDefinedAxisMapping(FInputAxisKeyMapping("MoveY", EKeys::A, -1.f));
 
 		UPlayerInput::AddEngineDefinedActionMapping(FInputActionKeyMapping("Shoot", EKeys::SpaceBar));
 		UPlayerInput::AddEngineDefinedActionMapping(FInputActionKeyMapping("Reload", EKeys::R));
+		UPlayerInput::AddEngineDefinedActionMapping(FInputActionKeyMapping("Dash", EKeys::LeftShift));
+
 	}
 }
 
@@ -59,8 +61,11 @@ void APlayerShip::BeginPlay()
 	Super::BeginPlay();
 	
 	// Fixed camera position
-	Camera->SetRelativeLocation(FVector(0.0f, 0.0f, 1000.0f));
-	Camera->SetRelativeRotation(FRotator(-45.f, 0.0f, 0.0f));
+	//Camera->SetWorldRotation(FRotator(-90.0f, 0.0f, 0.0f));
+	//Camera->SetWorldLocation(FVector(1000.0f, 0.0f, 3000.0f));
+
+	Camera->SetWorldRotation(FRotator(-30.0f, 0.0f, 0.0f));
+	Camera->SetWorldLocation(FVector(-1000.0f, 0.0f, 1000.0f));
 
 	InitLocation = PlayerMesh->GetComponentLocation();
 	
@@ -82,10 +87,12 @@ void APlayerShip::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	InitializeDefaultPawnInputBinding();
-	PlayerInputComponent->BindAxis("MoveX", this, &APlayerShip::MoveXAxis);
+	//PlayerInputComponent->BindAxis("MoveX", this, &APlayerShip::MoveXAxis);
 	PlayerInputComponent->BindAxis("MoveY", this, &APlayerShip::MoveYAxis);
 	PlayerInputComponent->BindAction("Shoot", EInputEvent::IE_Pressed, this, &APlayerShip::Shooting);
 	PlayerInputComponent->BindAction("Reload", EInputEvent::IE_Pressed, this, &APlayerShip::Reload);
+	PlayerInputComponent->BindAction("Dash", EInputEvent::IE_Pressed, this, &APlayerShip::Dash);
+
 
 }
 
@@ -134,10 +141,15 @@ void APlayerShip::MoveXAxis(float Value)
 
 void APlayerShip::MoveYAxis(float Value)
 {
-	YValue = Value;
+	if (Value >= -1300.0f || Value <= 1300.0f) 
+	{
+
+		YValue = Value;
+	}
 }
 
 void APlayerShip::Dash()
 {
+
 }
 

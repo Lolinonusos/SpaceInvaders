@@ -25,7 +25,7 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere, Category = Bullet)
-	float Speed = 1000.f;
+	float Speed = 1500.f;
 
 	UPROPERTY(EditAnywhere, Category = Bullet)
 	float TimeToDespawn = 5.f;
