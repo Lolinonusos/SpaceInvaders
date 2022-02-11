@@ -24,7 +24,7 @@ void ASpazInvaderzGameModeBase::BeginPlay()
 		{
 			for (int j = 1; j < 11; j++)
 			{
-				FVector Location = FVector((800.0f - i * 200), (-1000.0f + j * 200), 70.f);
+				FVector Location = FVector((2000.0f - i * 200), (-1000.0f + j * 200), 70.f);
 
 				AAlien* tempAlien = World->SpawnActor<AAlien>(AlienBP, Location, FRotator::ZeroRotator);
 

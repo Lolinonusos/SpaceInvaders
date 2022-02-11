@@ -1,2 +1,2 @@
-C:\Users\linus\Desktop\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Definitions.SpazInvaderz.h
-C:\Users\linus\Desktop\Unreal projects\SpaceInvaders\Source\SpazInvaderz\SpazInvaderz.h
+D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Definitions.SpazInvaderz.h
+D:\Unreal projects\SpaceInvaders\Source\SpazInvaderz\SpazInvaderz.h

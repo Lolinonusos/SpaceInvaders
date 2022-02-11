@@ -2,7 +2,7 @@
 
 
 #include "Alien.h"
-
+#include "Components/BoxComponent.h"
 #include "Components/StaticMeshComponent.h"
 
 
@@ -12,13 +12,14 @@ AAlien::AAlien()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	EnemyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("EnemyMesh"));
-	SetRootComponent(EnemyMesh);
+	UShapeComponent* EnemyCollisionMesh = CreateDefaultSubobject<UBoxComponent>(TEXT("EnemyCollisionMesh"));
+	SetRootComponent(EnemyCollisionMesh);
 
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshComponentAsset(TEXT("StaticMesh'/Game/Meshes/Capybara_Collectible2.Capybara_Collectible2'"));
-	if (MeshComponentAsset.Succeeded()) {
-		EnemyMesh->SetStaticMesh(MeshComponentAsset.Object);
-	}
+	//EnemyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("EnemyMesh"));
+	//static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshComponentAsset(TEXT("StaticMesh'/Game/Meshes/Capybara_Collectible2.Capybara_Collectible2'"));
+	//if (MeshComponentAsset.Succeeded()) {
+	//	EnemyMesh->SetStaticMesh(MeshComponentAsset.Object);
+	//}
 }
 
 // Called when the game starts or when spawned
