@@ -150,6 +150,11 @@ void APlayerShip::MoveYAxis(float Value)
 
 void APlayerShip::Dash()
 {
+	for (int i = 5; i < 1; i--)
+	{
+		PlayerSpeed = i * DashTimer;
+		
+	}
 
 }
 

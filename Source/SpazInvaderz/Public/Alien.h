@@ -32,4 +32,25 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Enemy")
 	USoundBase* EnemyHit = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Enemy")
+	float SpeedLevel;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Enemy")
+	UParticleSystem* EnemyDeath;
+
+	FVector MoveDirection = FVector(1.f, 0.f, 0.f);
+
+	bool DeleteThisEnemy = false;
+
+private:
+	UPROPERTY(EditAnywhere)
+		float Speed = -50.f;
+
+	UPROPERTY(EditAnywhere)
+	float DestroyPlacement = -2000.f;
+
+	int EnemyHealth;
+
+	void Hit();
 };
