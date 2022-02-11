@@ -77,7 +77,10 @@ void APlayerShip::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	InContact = false;
-	PlayerMesh->AddRelativeLocation(FVector(XValue, YValue, 0.f) * PlayerSpeed);
+
+	// Collision "added", now make some invisible walls :)
+	FHitResult HitResult;
+	PlayerMesh->AddRelativeLocation(FVector(XValue, YValue, 0.f) * PlayerSpeed, true, &HitResult);
 
 }
 
@@ -141,11 +144,8 @@ void APlayerShip::MoveXAxis(float Value)
 
 void APlayerShip::MoveYAxis(float Value)
 {
-	if (Value >= -1300.0f || Value <= 1300.0f) 
-	{
-
-		YValue = Value;
-	}
+	
+	YValue = Value;
 }
 
 void APlayerShip::Dash()
