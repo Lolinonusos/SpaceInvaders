@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 
-#include "Gameframework/SpringArmComponent.h"
+//#include "Gameframework/SpringArmComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Camera/CameraComponent.h"
 
@@ -35,8 +35,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
 	UStaticMeshComponent* PlayerMesh = nullptr;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
-	USpringArmComponent* SpringArm = nullptr;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
+	//USpringArmComponent* SpringArm = nullptr;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
 	UCameraComponent* Camera = nullptr;
@@ -81,6 +81,6 @@ private:
 	void Dash();
 	float XValue = 0.f;
 	float YValue = 0.f;
-	float DashTimer = 0.f;
+	float DashTimer = 1.f;
 
 };

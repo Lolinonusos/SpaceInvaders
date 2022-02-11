@@ -13,10 +13,18 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SPAZINVADERZ_SpazInvaderzGameModeBase_generated_h
 
-#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_SPARSE_DATA
-#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_RPC_WRAPPERS
-#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
+#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_SPARSE_DATA
+#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execReturnDead);
+
+
+#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execReturnDead);
+
+
+#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASpazInvaderzGameModeBase(); \
 	friend struct Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics; \
@@ -25,7 +33,7 @@ public: \
 	DECLARE_SERIALIZER(ASpazInvaderzGameModeBase)
 
 
-#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_INCLASS \
+#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_INCLASS \
 private: \
 	static void StaticRegisterNativesASpazInvaderzGameModeBase(); \
 	friend struct Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics; \
@@ -34,9 +42,9 @@ public: \
 	DECLARE_SERIALIZER(ASpazInvaderzGameModeBase)
 
 
-#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_STANDARD_CONSTRUCTORS \
+#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ASpazInvaderzGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API ASpazInvaderzGameModeBase(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASpazInvaderzGameModeBase) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ASpazInvaderzGameModeBase); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASpazInvaderzGameModeBase); \
@@ -47,9 +55,7 @@ private: \
 public:
 
 
-#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ASpazInvaderzGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
+#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ASpazInvaderzGameModeBase(ASpazInvaderzGameModeBase&&); \
@@ -57,31 +63,35 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ASpazInvaderzGameModeBase); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASpazInvaderzGameModeBase); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASpazInvaderzGameModeBase)
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ASpazInvaderzGameModeBase)
 
 
-#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET
-#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_12_PROLOG
-#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_GENERATED_BODY_LEGACY \
+#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__AlienBP() { return STRUCT_OFFSET(ASpazInvaderzGameModeBase, AlienBP); } \
+	FORCEINLINE static uint32 __PPO__SpawnDelay() { return STRUCT_OFFSET(ASpazInvaderzGameModeBase, SpawnDelay); }
+
+
+#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_16_PROLOG
+#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
-	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_SPARSE_DATA \
-	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_RPC_WRAPPERS \
-	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_INCLASS \
-	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_STANDARD_CONSTRUCTORS \
+	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_PRIVATE_PROPERTY_OFFSET \
+	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_SPARSE_DATA \
+	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_RPC_WRAPPERS \
+	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_INCLASS \
+	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_GENERATED_BODY \
+#define SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
-	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_SPARSE_DATA \
-	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
-	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
+	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_PRIVATE_PROPERTY_OFFSET \
+	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_SPARSE_DATA \
+	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_INCLASS_NO_PURE_DECLS \
+	SpaceInvaders_Source_SpazInvaderz_SpazInvaderzGameModeBase_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

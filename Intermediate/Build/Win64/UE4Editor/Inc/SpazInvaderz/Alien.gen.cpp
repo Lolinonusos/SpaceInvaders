@@ -19,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeAlien() {}
 	UPackage* Z_Construct_UPackage__Script_SpazInvaderz();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
 // End Cross Module References
 	void AAlien::StaticRegisterNativesAAlien()
 	{
@@ -45,6 +46,22 @@ void EmptyLinkFunctionForGeneratedCodeAlien() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EnemyHit_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EnemyHit;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SpeedLevel_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SpeedLevel;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_EnemyDeath_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_EnemyDeath;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Speed_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Speed;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DestroyPlacement_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_DestroyPlacement;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -81,10 +98,42 @@ void EmptyLinkFunctionForGeneratedCodeAlien() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAlien_Statics::NewProp_EnemyHit = { "EnemyHit", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AAlien, EnemyHit), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAlien_Statics::NewProp_EnemyHit_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAlien_Statics::NewProp_EnemyHit_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAlien_Statics::NewProp_SpeedLevel_MetaData[] = {
+		{ "Category", "Enemy" },
+		{ "ModuleRelativePath", "Public/Alien.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAlien_Statics::NewProp_SpeedLevel = { "SpeedLevel", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AAlien, SpeedLevel), METADATA_PARAMS(Z_Construct_UClass_AAlien_Statics::NewProp_SpeedLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAlien_Statics::NewProp_SpeedLevel_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAlien_Statics::NewProp_EnemyDeath_MetaData[] = {
+		{ "Category", "Enemy" },
+		{ "ModuleRelativePath", "Public/Alien.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAlien_Statics::NewProp_EnemyDeath = { "EnemyDeath", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AAlien, EnemyDeath), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AAlien_Statics::NewProp_EnemyDeath_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAlien_Statics::NewProp_EnemyDeath_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAlien_Statics::NewProp_Speed_MetaData[] = {
+		{ "Category", "Alien" },
+		{ "ModuleRelativePath", "Public/Alien.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAlien_Statics::NewProp_Speed = { "Speed", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AAlien, Speed), METADATA_PARAMS(Z_Construct_UClass_AAlien_Statics::NewProp_Speed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAlien_Statics::NewProp_Speed_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAlien_Statics::NewProp_DestroyPlacement_MetaData[] = {
+		{ "Category", "Alien" },
+		{ "ModuleRelativePath", "Public/Alien.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAlien_Statics::NewProp_DestroyPlacement = { "DestroyPlacement", nullptr, (EPropertyFlags)0x0040000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AAlien, DestroyPlacement), METADATA_PARAMS(Z_Construct_UClass_AAlien_Statics::NewProp_DestroyPlacement_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAlien_Statics::NewProp_DestroyPlacement_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAlien_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAlien_Statics::NewProp_EnemyMesh,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAlien_Statics::NewProp_EnemyMove,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAlien_Statics::NewProp_EnemyHit,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAlien_Statics::NewProp_SpeedLevel,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAlien_Statics::NewProp_EnemyDeath,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAlien_Statics::NewProp_Speed,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAlien_Statics::NewProp_DestroyPlacement,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AAlien_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AAlien>::IsAbstract,
@@ -113,7 +162,7 @@ void EmptyLinkFunctionForGeneratedCodeAlien() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AAlien, 4216750472);
+	IMPLEMENT_CLASS(AAlien, 1657755804);
 	template<> SPAZINVADERZ_API UClass* StaticClass<AAlien>()
 	{
 		return AAlien::StaticClass();

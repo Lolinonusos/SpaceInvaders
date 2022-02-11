@@ -18,8 +18,9 @@ ABullet::ABullet()
 
 	BulletMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BulletComp"));
 	BulletMesh->SetupAttachment(RootComponent);
+	//BulletMesh->SetCollisionResponseToChannels();
 
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshComponentAsset(TEXT("StaticMesh'/Game/Meshes/Bulletboi.Bulletboi'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshComponentAsset(TEXT("StaticMesh'/Game/Meshes/BulletBoi/Bulletboi.Bulletboi'"));
 	if (MeshComponentAsset.Succeeded()) {
 		BulletMesh->SetStaticMesh(MeshComponentAsset.Object);
 	}
@@ -36,6 +37,7 @@ void ABullet::BeginPlay()
 void ABullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
 	FVector NewLocation = GetActorLocation();
 	NewLocation += GetActorForwardVector() * Speed * DeltaTime; // Makes sure the bullet moves forward
 	SetActorLocation(NewLocation);

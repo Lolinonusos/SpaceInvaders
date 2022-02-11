@@ -58,7 +58,11 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AAlien)
 
 
-#define SpaceInvaders_Source_SpazInvaderz_Public_Alien_h_12_PRIVATE_PROPERTY_OFFSET
+#define SpaceInvaders_Source_SpazInvaderz_Public_Alien_h_12_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__Speed() { return STRUCT_OFFSET(AAlien, Speed); } \
+	FORCEINLINE static uint32 __PPO__DestroyPlacement() { return STRUCT_OFFSET(AAlien, DestroyPlacement); }
+
+
 #define SpaceInvaders_Source_SpazInvaderz_Public_Alien_h_9_PROLOG
 #define SpaceInvaders_Source_SpazInvaderz_Public_Alien_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
