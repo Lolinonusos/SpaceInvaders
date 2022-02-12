@@ -40,6 +40,7 @@ void ASpazInvaderzGameModeBase::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 
+    // Movement pattern, currently it changes movement based on time
     EnemyTimer += DeltaSeconds;
     EnemyTurnTimer += DeltaSeconds;
     if (EnemyTurnTimer > 4.0f)
@@ -85,5 +86,11 @@ void ASpazInvaderzGameModeBase::Tick(float DeltaSeconds)
 
 bool ASpazInvaderzGameModeBase::ReturnDead()
 {
+    // Checks all the enemies are dead
+    if (ArraySize == 0)
+    {
+        bAllDead = true;
+        return bAllDead;
+    }
 	return false;
 }

@@ -6,6 +6,7 @@
 #include "Kismet/GameplayStatics.h"
 #include <UObject/ConstructorHelpers.h>
 #include "Engine/World.h"
+#include "Alien.h"
 
 // Sets default values
 ABullet::ABullet()
@@ -53,9 +54,23 @@ void ABullet::Tick(float DeltaTime)
 void ABullet::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent,
 	int32 OtherbodyIndex, bool bFromSweep, const FHitResult& SweepResult) 
 {
-
-	UE_LOG(LogTemp, Warning, TEXT(" Overlapped"));
 	// if it hits enemy destroy enemy and this actor 
+	if (OtherActor->IsA(AAlien::StaticClass()))
+	{
+		Cast<AAlien>(OtherActor)->Hit();
+
+		// Particles
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), BulletFire, GetTransform(), true);
+
+		// SoundFX
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), BulletSound, GetActorLocation());
+
+		// Destroy Bullet
+		Destroy();
+	}
+
+
+	//UE_LOG(LogTemp, Warning, TEXT(" Overlapped"));
 
 
 }

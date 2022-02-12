@@ -31,9 +31,10 @@ APlayerShip::APlayerShip()
 	Camera->bUsePawnControlRotation = false;
 	//Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
 
-	
+	//PlayerMesh->SetSimulatePhysics(true);
 }
 
+// Controls in c++
 static void InitializeDefaultPawnInputBinding()
 {
 	static bool bindingsAdded = false;

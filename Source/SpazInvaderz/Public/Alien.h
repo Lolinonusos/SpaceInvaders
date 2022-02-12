@@ -43,6 +43,7 @@ public:
 
 	bool DeleteThisEnemy = false;
 
+	void Hit();
 private:
 	UPROPERTY(EditAnywhere)
 		float Speed = -50.f;
@@ -52,5 +53,4 @@ private:
 
 	int EnemyHealth;
 
-	void Hit();
 };
