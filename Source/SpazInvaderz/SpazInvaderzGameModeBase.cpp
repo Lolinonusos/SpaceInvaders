@@ -53,7 +53,6 @@ void ASpazInvaderzGameModeBase::Tick(float DeltaSeconds)
                 EnemyArray.RemoveAt(i);
                 ArraySize--;
                 UE_LOG(LogTemp, Error, TEXT("Enemy down. Enemy Array is: %d "), EnemyArray.Num());
-                ReturnDead();
             }
 
         }
@@ -81,17 +80,20 @@ void ASpazInvaderzGameModeBase::Tick(float DeltaSeconds)
         //EnemyMoveDirection = FMath::FloorToInt(FMath::FRandRange(1.f,4.f));
         EnemyTurnTimer = 0.f;
     }
+    ReturnDead();
 
-
+    
 }
 
 bool ASpazInvaderzGameModeBase::ReturnDead()
 {
     // Checks all the enemies are dead
-    if (ArraySize == 0)
+    if (EnemyArray.Num() == 0)
     {
         bAllDead = true;
+        UE_LOG(LogTemp, Error, TEXT("All enemies are defeated"));
         return bAllDead;
+
     }
 	return false;
 }

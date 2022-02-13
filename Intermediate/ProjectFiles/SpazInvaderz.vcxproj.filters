@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\SpazInvaderz.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{8096F662-2E70-46CF-9EA7-4772008906D2}</UniqueIdentifier>
+      <UniqueIdentifier>{B6D6A239-58A7-42A9-8D65-221629DFC71A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\SpazInvaderz.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{605B38C3-5397-4DA6-A8D1-82CD1F9C922E}</UniqueIdentifier>
+      <UniqueIdentifier>{6670858A-11F9-46E5-AFA5-3CD159889233}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -29,7 +29,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\SpazInvaderz">
-      <UniqueIdentifier>{CA99F699-EBE2-4ACD-A785-CBC06918F09C}</UniqueIdentifier>
+      <UniqueIdentifier>{15F6C92C-56BF-442C-88BE-2B13EF61D684}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\SpazInvaderz\SpazInvaderz.Build.cs">
       <Filter>Source\SpazInvaderz</Filter>
@@ -47,7 +47,7 @@
       <Filter>Source\SpazInvaderz</Filter>
     </ClInclude>
     <Filter Include="Source\SpazInvaderz\Private">
-      <UniqueIdentifier>{EAF437C7-19CD-49F6-9F49-A34FAC084B0B}</UniqueIdentifier>
+      <UniqueIdentifier>{B5749DFD-79F2-4CD6-819A-08B610E77544}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\SpazInvaderz\Private\Alien.cpp">
       <Filter>Source\SpazInvaderz\Private</Filter>
@@ -58,11 +58,14 @@
     <ClCompile Include="..\..\Source\SpazInvaderz\Private\Bullet.cpp">
       <Filter>Source\SpazInvaderz\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\SpazInvaderz\Private\DisplayStats.cpp">
+      <Filter>Source\SpazInvaderz\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\SpazInvaderz\Private\PlayerShip.cpp">
       <Filter>Source\SpazInvaderz\Private</Filter>
     </ClCompile>
     <Filter Include="Source\SpazInvaderz\Public">
-      <UniqueIdentifier>{477995CB-BCD1-4021-95E5-05175EF24F26}</UniqueIdentifier>
+      <UniqueIdentifier>{AA43E22A-924C-42E6-BD27-C1EA82ABAD80}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\SpazInvaderz\Public\Alien.h">
       <Filter>Source\SpazInvaderz\Public</Filter>
@@ -71,6 +74,9 @@
       <Filter>Source\SpazInvaderz\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\SpazInvaderz\Public\Bullet.h">
+      <Filter>Source\SpazInvaderz\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SpazInvaderz\Public\DisplayStats.h">
       <Filter>Source\SpazInvaderz\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\SpazInvaderz\Public\PlayerShip.h">
