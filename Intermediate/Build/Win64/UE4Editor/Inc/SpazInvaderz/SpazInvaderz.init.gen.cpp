@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeSpazInvaderz_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x8E7672CB,
+				0x84B0ADB4,
 				0xC3855F8F,
 				METADATA_PARAMS(nullptr, 0)
 			};

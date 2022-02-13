@@ -51,8 +51,9 @@ void ASpazInvaderzGameModeBase::Tick(float DeltaSeconds)
             if (EnemyArray[i]->DeleteThisEnemy) {
                 EnemyArray[i]->Destroy();
                 EnemyArray.RemoveAt(i);
-                UE_LOG(LogTemp, Error, TEXT("Enemy down. Enemy Array is: %d "), EnemyArray.Num());
                 ArraySize--;
+                UE_LOG(LogTemp, Error, TEXT("Enemy down. Enemy Array is: %d "), EnemyArray.Num());
+                ReturnDead();
             }
 
         }

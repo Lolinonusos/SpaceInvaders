@@ -50,6 +50,14 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
 	int BulletAmount = 30;
 
+	// HUD time?
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bullet)
+	float BulletPercent;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bullet)
+	float PreviousBullet;
+
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
 	USoundBase* ShootingSound = nullptr;
 
@@ -64,11 +72,11 @@ public:
 	void Reload();
 	void Shooting();
 
-
-
 	UFUNCTION(BlueprintCallable)
 	void ResetLocation() const;
 	bool InContact;
+
+
 
 private:
 

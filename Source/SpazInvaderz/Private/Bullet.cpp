@@ -54,9 +54,10 @@ void ABullet::Tick(float DeltaTime)
 void ABullet::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent,
 	int32 OtherbodyIndex, bool bFromSweep, const FHitResult& SweepResult) 
 {
-	// if it hits enemy destroy enemy and this actor 
+	// if it hits an enemy actor destroy enemy and this actor 
 	if (OtherActor->IsA(AAlien::StaticClass()))
 	{
+		// Runs the hit function in Alien.cpp
 		Cast<AAlien>(OtherActor)->Hit();
 
 		// Particles

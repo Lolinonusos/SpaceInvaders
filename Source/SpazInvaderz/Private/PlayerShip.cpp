@@ -10,6 +10,7 @@
 #include "Components/BoxComponent.h"
 #include "Camera/CameraActor.h"
 #include "Engine/Engine.h"
+#include <UObject/ConstructorHelpers.h>
 
 
 // Sets default values
@@ -32,6 +33,13 @@ APlayerShip::APlayerShip()
 	//Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
 
 	//PlayerMesh->SetSimulatePhysics(true);
+
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> PlayerMeshComponent(TEXT("StaticMesh'/Game/Meshes/Player/SpaceShip.SpaceShip'"));
+	if (PlayerMeshComponent.Succeeded())
+	{
+		PlayerMesh->SetStaticMesh(PlayerMeshComponent.Object);
+	}
+
 }
 
 // Controls in c++
