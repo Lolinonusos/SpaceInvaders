@@ -8,6 +8,8 @@
 //#include "Gameframework/SpringArmComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Camera/CameraComponent.h"
+#include <UObject/ConstructorHelpers.h>
+#include "Components/TimelineComponent.h"
 
 #include "PlayerShip.generated.h"
 
@@ -24,9 +26,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+public:	
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -44,20 +46,51 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
 	float PlayerSpeed = 10.f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
-	int PlayerHealth = 3;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
-	int BulletAmount = 30;
 
 	// HUD time?
+	// https://unrealcpp.com/health-bar-ui-hud/ looked at this
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
+	int HealthTotal;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
+	int PlayerHealth = 3;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
+	float HealthPercentage;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Health")
+	float PreviousHealth;
+
+	float GetHealth();
+
+	UFUNCTION(Category = "Health")
+	void UpdateHealth(float HealthChange);
+
+	UFUNCTION(BluePrintCallable, Category = "Health")
+	FText GetHealthIntText();
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bullet)
+	int BulletTotal = 30;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bullet)
+	int BulletCurrent = 30;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bullet)
 	float BulletPercent;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Bullet)
 	float PreviousBullet;
 
+	float GetBUllet();
 
+	UFUNCTION(Category = Bullet)
+	void UpdateBullet(float BulletChange);
+
+	UFUNCTION(BluePrintCallable, Category = "Bullet")
+	FText GetBulletIntText();
+
+
+	// SFX Mode
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
 	USoundBase* ShootingSound = nullptr;
 
@@ -87,8 +120,10 @@ private:
 	void MoveYAxis(float Value);
 
 	void Dash();
+	bool bDash;
 	float XValue = 0.f;
 	float YValue = 0.f;
-	float DashTimer = 1.f;
+	float DashSpeed;
+	float DashTimer;
 
 };

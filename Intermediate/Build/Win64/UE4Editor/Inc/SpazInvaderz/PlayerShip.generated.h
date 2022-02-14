@@ -13,18 +13,26 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SPAZINVADERZ_PlayerShip_generated_h
 
-#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_SPARSE_DATA
-#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_RPC_WRAPPERS \
+#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_SPARSE_DATA
+#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execResetLocation);
+	DECLARE_FUNCTION(execResetLocation); \
+	DECLARE_FUNCTION(execGetBulletIntText); \
+	DECLARE_FUNCTION(execUpdateBullet); \
+	DECLARE_FUNCTION(execGetHealthIntText); \
+	DECLARE_FUNCTION(execUpdateHealth);
 
 
-#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execResetLocation);
+	DECLARE_FUNCTION(execResetLocation); \
+	DECLARE_FUNCTION(execGetBulletIntText); \
+	DECLARE_FUNCTION(execUpdateBullet); \
+	DECLARE_FUNCTION(execGetHealthIntText); \
+	DECLARE_FUNCTION(execUpdateHealth);
 
 
-#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_INCLASS_NO_PURE_DECLS \
+#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPlayerShip(); \
 	friend struct Z_Construct_UClass_APlayerShip_Statics; \
@@ -33,7 +41,7 @@ public: \
 	DECLARE_SERIALIZER(APlayerShip)
 
 
-#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_INCLASS \
+#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_INCLASS \
 private: \
 	static void StaticRegisterNativesAPlayerShip(); \
 	friend struct Z_Construct_UClass_APlayerShip_Statics; \
@@ -42,7 +50,7 @@ public: \
 	DECLARE_SERIALIZER(APlayerShip)
 
 
-#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_STANDARD_CONSTRUCTORS \
+#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API APlayerShip(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APlayerShip) \
@@ -55,7 +63,7 @@ private: \
 public:
 
 
-#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_ENHANCED_CONSTRUCTORS \
+#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API APlayerShip(APlayerShip&&); \
@@ -66,28 +74,28 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APlayerShip)
 
 
-#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_PRIVATE_PROPERTY_OFFSET
-#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_14_PROLOG
-#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_GENERATED_BODY_LEGACY \
+#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_PRIVATE_PROPERTY_OFFSET
+#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_16_PROLOG
+#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_PRIVATE_PROPERTY_OFFSET \
-	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_SPARSE_DATA \
-	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_RPC_WRAPPERS \
-	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_INCLASS \
-	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_STANDARD_CONSTRUCTORS \
+	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_PRIVATE_PROPERTY_OFFSET \
+	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_SPARSE_DATA \
+	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_RPC_WRAPPERS \
+	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_INCLASS \
+	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_GENERATED_BODY \
+#define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_PRIVATE_PROPERTY_OFFSET \
-	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_SPARSE_DATA \
-	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_INCLASS_NO_PURE_DECLS \
-	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_17_ENHANCED_CONSTRUCTORS \
+	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_PRIVATE_PROPERTY_OFFSET \
+	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_SPARSE_DATA \
+	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_INCLASS_NO_PURE_DECLS \
+	SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

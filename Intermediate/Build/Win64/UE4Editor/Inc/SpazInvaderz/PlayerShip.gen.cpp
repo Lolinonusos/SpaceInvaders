@@ -30,13 +30,113 @@ void EmptyLinkFunctionForGeneratedCodePlayerShip() {}
 		P_THIS->ResetLocation();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(APlayerShip::execGetBulletIntText)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FText*)Z_Param__Result=P_THIS->GetBulletIntText();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(APlayerShip::execUpdateBullet)
+	{
+		P_GET_PROPERTY(FFloatProperty,Z_Param_BulletChange);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->UpdateBullet(Z_Param_BulletChange);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(APlayerShip::execGetHealthIntText)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FText*)Z_Param__Result=P_THIS->GetHealthIntText();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(APlayerShip::execUpdateHealth)
+	{
+		P_GET_PROPERTY(FFloatProperty,Z_Param_HealthChange);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->UpdateHealth(Z_Param_HealthChange);
+		P_NATIVE_END;
+	}
 	void APlayerShip::StaticRegisterNativesAPlayerShip()
 	{
 		UClass* Class = APlayerShip::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "GetBulletIntText", &APlayerShip::execGetBulletIntText },
+			{ "GetHealthIntText", &APlayerShip::execGetHealthIntText },
 			{ "ResetLocation", &APlayerShip::execResetLocation },
+			{ "UpdateBullet", &APlayerShip::execUpdateBullet },
+			{ "UpdateHealth", &APlayerShip::execUpdateHealth },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_APlayerShip_GetBulletIntText_Statics
+	{
+		struct PlayerShip_eventGetBulletIntText_Parms
+		{
+			FText ReturnValue;
+		};
+		static const UE4CodeGen_Private::FTextPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FTextPropertyParams Z_Construct_UFunction_APlayerShip_GetBulletIntText_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(PlayerShip_eventGetBulletIntText_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APlayerShip_GetBulletIntText_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APlayerShip_GetBulletIntText_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerShip_GetBulletIntText_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Bullet" },
+		{ "ModuleRelativePath", "Public/PlayerShip.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerShip_GetBulletIntText_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerShip, nullptr, "GetBulletIntText", nullptr, nullptr, sizeof(PlayerShip_eventGetBulletIntText_Parms), Z_Construct_UFunction_APlayerShip_GetBulletIntText_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerShip_GetBulletIntText_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerShip_GetBulletIntText_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerShip_GetBulletIntText_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_APlayerShip_GetBulletIntText()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerShip_GetBulletIntText_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_APlayerShip_GetHealthIntText_Statics
+	{
+		struct PlayerShip_eventGetHealthIntText_Parms
+		{
+			FText ReturnValue;
+		};
+		static const UE4CodeGen_Private::FTextPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FTextPropertyParams Z_Construct_UFunction_APlayerShip_GetHealthIntText_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(PlayerShip_eventGetHealthIntText_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APlayerShip_GetHealthIntText_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APlayerShip_GetHealthIntText_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerShip_GetHealthIntText_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Health" },
+		{ "ModuleRelativePath", "Public/PlayerShip.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerShip_GetHealthIntText_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerShip, nullptr, "GetHealthIntText", nullptr, nullptr, sizeof(PlayerShip_eventGetHealthIntText_Parms), Z_Construct_UFunction_APlayerShip_GetHealthIntText_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerShip_GetHealthIntText_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerShip_GetHealthIntText_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerShip_GetHealthIntText_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_APlayerShip_GetHealthIntText()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerShip_GetHealthIntText_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_APlayerShip_ResetLocation_Statics
 	{
@@ -57,6 +157,72 @@ void EmptyLinkFunctionForGeneratedCodePlayerShip() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerShip_ResetLocation_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_APlayerShip_UpdateBullet_Statics
+	{
+		struct PlayerShip_eventUpdateBullet_Parms
+		{
+			float BulletChange;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_BulletChange;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_APlayerShip_UpdateBullet_Statics::NewProp_BulletChange = { "BulletChange", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(PlayerShip_eventUpdateBullet_Parms, BulletChange), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APlayerShip_UpdateBullet_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APlayerShip_UpdateBullet_Statics::NewProp_BulletChange,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerShip_UpdateBullet_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Bullet" },
+		{ "ModuleRelativePath", "Public/PlayerShip.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerShip_UpdateBullet_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerShip, nullptr, "UpdateBullet", nullptr, nullptr, sizeof(PlayerShip_eventUpdateBullet_Parms), Z_Construct_UFunction_APlayerShip_UpdateBullet_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerShip_UpdateBullet_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerShip_UpdateBullet_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerShip_UpdateBullet_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_APlayerShip_UpdateBullet()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerShip_UpdateBullet_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_APlayerShip_UpdateHealth_Statics
+	{
+		struct PlayerShip_eventUpdateHealth_Parms
+		{
+			float HealthChange;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_HealthChange;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_APlayerShip_UpdateHealth_Statics::NewProp_HealthChange = { "HealthChange", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(PlayerShip_eventUpdateHealth_Parms, HealthChange), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APlayerShip_UpdateHealth_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APlayerShip_UpdateHealth_Statics::NewProp_HealthChange,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerShip_UpdateHealth_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Health" },
+		{ "ModuleRelativePath", "Public/PlayerShip.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerShip_UpdateHealth_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerShip, nullptr, "UpdateHealth", nullptr, nullptr, sizeof(PlayerShip_eventUpdateHealth_Parms), Z_Construct_UFunction_APlayerShip_UpdateHealth_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerShip_UpdateHealth_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerShip_UpdateHealth_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerShip_UpdateHealth_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_APlayerShip_UpdateHealth()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerShip_UpdateHealth_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -84,13 +250,29 @@ void EmptyLinkFunctionForGeneratedCodePlayerShip() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_PlayerSpeed;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HealthTotal_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_HealthTotal;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PlayerHealth_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_PlayerHealth;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BulletAmount_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HealthPercentage_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_BulletAmount;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_HealthPercentage;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PreviousHealth_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_PreviousHealth;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BulletTotal_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_BulletTotal;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BulletCurrent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_BulletCurrent;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BulletPercent_MetaData[];
 #endif
@@ -120,7 +302,11 @@ void EmptyLinkFunctionForGeneratedCodePlayerShip() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_SpazInvaderz,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_APlayerShip_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_APlayerShip_GetBulletIntText, "GetBulletIntText" }, // 1620604896
+		{ &Z_Construct_UFunction_APlayerShip_GetHealthIntText, "GetHealthIntText" }, // 3018393841
 		{ &Z_Construct_UFunction_APlayerShip_ResetLocation, "ResetLocation" }, // 2066902162
+		{ &Z_Construct_UFunction_APlayerShip_UpdateBullet, "UpdateBullet" }, // 274317044
+		{ &Z_Construct_UFunction_APlayerShip_UpdateHealth, "UpdateHealth" }, // 3529966386
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerShip_Statics::Class_MetaDataParams[] = {
@@ -155,25 +341,53 @@ void EmptyLinkFunctionForGeneratedCodePlayerShip() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APlayerShip_Statics::NewProp_PlayerSpeed = { "PlayerSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerShip, PlayerSpeed), METADATA_PARAMS(Z_Construct_UClass_APlayerShip_Statics::NewProp_PlayerSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerShip_Statics::NewProp_PlayerSpeed_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerShip_Statics::NewProp_HealthTotal_MetaData[] = {
+		{ "Category", "Health" },
+		{ "Comment", "// HUD time?\n// https://unrealcpp.com/health-bar-ui-hud/ looked at this\n" },
+		{ "ModuleRelativePath", "Public/PlayerShip.h" },
+		{ "ToolTip", "HUD time?\nhttps:unrealcpp.com/health-bar-ui-hud/ looked at this" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_APlayerShip_Statics::NewProp_HealthTotal = { "HealthTotal", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerShip, HealthTotal), METADATA_PARAMS(Z_Construct_UClass_APlayerShip_Statics::NewProp_HealthTotal_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerShip_Statics::NewProp_HealthTotal_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerShip_Statics::NewProp_PlayerHealth_MetaData[] = {
-		{ "Category", "PlayerMesh" },
+		{ "Category", "Health" },
 		{ "ModuleRelativePath", "Public/PlayerShip.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_APlayerShip_Statics::NewProp_PlayerHealth = { "PlayerHealth", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerShip, PlayerHealth), METADATA_PARAMS(Z_Construct_UClass_APlayerShip_Statics::NewProp_PlayerHealth_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerShip_Statics::NewProp_PlayerHealth_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletAmount_MetaData[] = {
-		{ "Category", "PlayerMesh" },
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerShip_Statics::NewProp_HealthPercentage_MetaData[] = {
+		{ "Category", "Health" },
 		{ "ModuleRelativePath", "Public/PlayerShip.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletAmount = { "BulletAmount", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerShip, BulletAmount), METADATA_PARAMS(Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletAmount_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletAmount_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APlayerShip_Statics::NewProp_HealthPercentage = { "HealthPercentage", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerShip, HealthPercentage), METADATA_PARAMS(Z_Construct_UClass_APlayerShip_Statics::NewProp_HealthPercentage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerShip_Statics::NewProp_HealthPercentage_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerShip_Statics::NewProp_PreviousHealth_MetaData[] = {
+		{ "Category", "Health" },
+		{ "ModuleRelativePath", "Public/PlayerShip.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APlayerShip_Statics::NewProp_PreviousHealth = { "PreviousHealth", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerShip, PreviousHealth), METADATA_PARAMS(Z_Construct_UClass_APlayerShip_Statics::NewProp_PreviousHealth_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerShip_Statics::NewProp_PreviousHealth_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletTotal_MetaData[] = {
+		{ "Category", "Bullet" },
+		{ "ModuleRelativePath", "Public/PlayerShip.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletTotal = { "BulletTotal", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerShip, BulletTotal), METADATA_PARAMS(Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletTotal_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletTotal_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletCurrent_MetaData[] = {
+		{ "Category", "Bullet" },
+		{ "ModuleRelativePath", "Public/PlayerShip.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletCurrent = { "BulletCurrent", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerShip, BulletCurrent), METADATA_PARAMS(Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletCurrent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletCurrent_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletPercent_MetaData[] = {
 		{ "Category", "Bullet" },
-		{ "Comment", "// HUD time?\n" },
 		{ "ModuleRelativePath", "Public/PlayerShip.h" },
-		{ "ToolTip", "HUD time?" },
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletPercent = { "BulletPercent", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerShip, BulletPercent), METADATA_PARAMS(Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletPercent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletPercent_MetaData)) };
@@ -187,7 +401,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerShip() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerShip_Statics::NewProp_ShootingSound_MetaData[] = {
 		{ "Category", "PlayerMesh" },
+		{ "Comment", "// SFX Mode\n" },
 		{ "ModuleRelativePath", "Public/PlayerShip.h" },
+		{ "ToolTip", "SFX Mode" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlayerShip_Statics::NewProp_ShootingSound = { "ShootingSound", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerShip, ShootingSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APlayerShip_Statics::NewProp_ShootingSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerShip_Statics::NewProp_ShootingSound_MetaData)) };
@@ -212,8 +428,12 @@ void EmptyLinkFunctionForGeneratedCodePlayerShip() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_PlayerMesh,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_Camera,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_PlayerSpeed,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_HealthTotal,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_PlayerHealth,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletAmount,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_HealthPercentage,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_PreviousHealth,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletTotal,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletCurrent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_BulletPercent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_PreviousBullet,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerShip_Statics::NewProp_ShootingSound,
@@ -247,7 +467,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerShip() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APlayerShip, 3182124980);
+	IMPLEMENT_CLASS(APlayerShip, 301410282);
 	template<> SPAZINVADERZ_API UClass* StaticClass<APlayerShip>()
 	{
 		return APlayerShip::StaticClass();

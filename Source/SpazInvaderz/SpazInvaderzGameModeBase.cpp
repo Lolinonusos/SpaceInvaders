@@ -97,3 +97,8 @@ bool ASpazInvaderzGameModeBase::ReturnDead()
     }
 	return false;
 }
+
+void ASpazInvaderzGameModeBase::EveryOneIsDead()
+{
+
+}

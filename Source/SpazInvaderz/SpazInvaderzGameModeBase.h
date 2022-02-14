@@ -51,4 +51,7 @@ private:
 
 	TArray<class AAlien*> EnemyArray;
 
+	//UFUNCTION
+	void EveryOneIsDead();
+
 };

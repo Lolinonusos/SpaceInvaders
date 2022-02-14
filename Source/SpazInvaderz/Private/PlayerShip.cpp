@@ -10,8 +10,8 @@
 #include "Components/BoxComponent.h"
 #include "Camera/CameraActor.h"
 #include "Engine/Engine.h"
-#include <UObject/ConstructorHelpers.h>
-
+#include "Kismet/KismetMathLibrary.h"
+#include "TimerManager.h"
 
 // Sets default values
 APlayerShip::APlayerShip()
@@ -21,12 +21,6 @@ APlayerShip::APlayerShip()
 
 	PlayerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PlayerMesh"));
 	SetRootComponent(PlayerMesh);
-
-	//SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArmComp"));
-	//SpringArm->bDoCollisionTest = false;
-	//SpringArm->CameraLagSpeed = 5.f;
-	//SpringArm->SetupAttachment(PlayerMesh);
-	//SpringArm->SetRelativeRotation(FRotator(-45.f, 0.f, 0.f));
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->bUsePawnControlRotation = false;
@@ -89,7 +83,29 @@ void APlayerShip::Tick(float DeltaTime)
 
 	// Collision "added", now make some invisible walls :)
 	FHitResult HitResult;
-	PlayerMesh->AddRelativeLocation(FVector(XValue, YValue, 0.f) * PlayerSpeed, true, &HitResult);
+	PlayerMesh->AddRelativeLocation(FVector(XValue, YValue, 0.f) * (PlayerSpeed + DashSpeed), true, &HitResult);
+
+	if (bDash)
+	{
+		if (DashSpeed > 0)
+		{
+			DashSpeed -= 1.5f;
+			UE_LOG(LogTemp, Error, TEXT("DashSpeed is %f "), DashSpeed);
+		}
+
+		DashTimer += DeltaTime;
+
+		//UE_LOG(LogTemp, Error, TEXT("DashTimer is %f "), DashTimer);
+		if (DashTimer >= 0.5f)
+		{
+			DashSpeed = 0;
+			DashTimer = 0.f;
+			bDash = false;
+
+			//UE_LOG(LogTemp, Error, TEXT("DashSpeed is %f "), DashSpeed);
+
+		}
+	}
 
 }
 
@@ -115,10 +131,11 @@ void APlayerShip::ResetLocation() const
 
 void APlayerShip::Shooting()
 {
-	if (BulletAmount > 0)
+	// When BulletAmount is 0 you have to reload
+	if (BulletCurrent > 0)
 	{
-		BulletAmount--;
-		GEngine->AddOnScreenDebugMessage(-1, 12.f, FColor::White, FString::Printf(TEXT("Ammo :  %d "), BulletAmount));
+		BulletCurrent--;
+		GEngine->AddOnScreenDebugMessage(-1, 12.f, FColor::White, FString::Printf(TEXT("Ammo :  %d "), BulletCurrent));
 
 		UWorld* World = GetWorld();
 		if (World)
@@ -129,20 +146,48 @@ void APlayerShip::Shooting()
 			UGameplayStatics::PlaySound2D(World, ShootingSound, 1.f, 1.f, 0.f, 0);
 		}
 
-		if (BulletAmount == 0)
+		if (BulletCurrent == 0)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 12.f, FColor::Red, FString::Printf(TEXT("No ammo Reload %d "), BulletAmount));
+			GEngine->AddOnScreenDebugMessage(-1, 12.f, FColor::Red, FString::Printf(TEXT("No ammo Reload %d "), BulletCurrent));
 		}
 	}
 	UE_LOG(LogTemp, Warning, TEXT("Shooting"));
 }
 
+float APlayerShip::GetHealth()
+{
+	return 0.0f;
+}
+
+void APlayerShip::UpdateHealth(float HealthChange)
+{
+}
+
+FText APlayerShip::GetHealthIntText()
+{
+	return FText();
+}
+
+float APlayerShip::GetBUllet()
+{
+	return 0.0f;
+}
+
+void APlayerShip::UpdateBullet(float BulletChange)
+{
+}
+
+FText APlayerShip::GetBulletIntText()
+{
+	return FText();
+}
+
 void APlayerShip::Reload()
 {
-	BulletAmount = 30;
+	BulletCurrent = 30;
 	UWorld* NewWorld = GetWorld();
 	UGameplayStatics::PlaySound2D(NewWorld, ReloadSound, 1.f, 1.f, 0.f, 0);
-	GEngine->AddOnScreenDebugMessage(-1, 12.f, FColor::Green, FString::Printf(TEXT("Reloaded"), BulletAmount));
+	GEngine->AddOnScreenDebugMessage(-1, 12.f, FColor::Green, FString::Printf(TEXT("Reloaded"), BulletCurrent));
 }
 
 
@@ -159,11 +204,10 @@ void APlayerShip::MoveYAxis(float Value)
 
 void APlayerShip::Dash()
 {
-	for (int i = 5; i < 1; i--)
+	bDash = true;
+	if (bDash)
 	{
-		PlayerSpeed = i * DashTimer;
-		
+		DashSpeed = 30.f;
 	}
-
 }
 
