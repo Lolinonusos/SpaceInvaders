@@ -37,6 +37,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
 	UStaticMeshComponent* PlayerMesh = nullptr;
 
+	// HitBox
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
+	UShapeComponent* CollisionBox = nullptr;
+
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
 	//USpringArmComponent* SpringArm = nullptr;
 
@@ -125,5 +129,9 @@ private:
 	float YValue = 0.f;
 	float DashSpeed;
 	float DashTimer;
+
+	UFUNCTION()
+	void OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent,
+			int32 OtherbodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 };

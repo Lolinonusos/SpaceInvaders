@@ -43,19 +43,19 @@ void ASpazInvaderzGameModeBase::Tick(float DeltaSeconds)
     // Movement pattern, currently it changes movement based on time
     EnemyTimer += DeltaSeconds;
     EnemyTurnTimer += DeltaSeconds;
+        UE_LOG(LogTemp, Error, TEXT("Enemy Move Logic Running"));
+    for (int i = 0; i < EnemyArray.Num(); i++)
+    {
+        if (EnemyArray[i]->DeleteThisEnemy) {
+            EnemyArray[i]->Destroy();
+            EnemyArray.RemoveAt(i);
+            ArraySize--;
+            UE_LOG(LogTemp, Error, TEXT("Enemy down. Enemy Array is: %d "), EnemyArray.Num());
+        }
+
+    }
     if (EnemyTurnTimer > 4.0f)
     {
-        UE_LOG(LogTemp, Error, TEXT("Enemy Move Logic Running"));
-        for (int i = 0; i < EnemyArray.Num(); i++)
-        {
-            if (EnemyArray[i]->DeleteThisEnemy) {
-                EnemyArray[i]->Destroy();
-                EnemyArray.RemoveAt(i);
-                ArraySize--;
-                UE_LOG(LogTemp, Error, TEXT("Enemy down. Enemy Array is: %d "), EnemyArray.Num());
-            }
-
-        }
         for (auto Enemy : EnemyArray) //for (int i = 0; i < EnemyArray.Num(); i++)
         {
             switch (EnemyMoveDirection) {
@@ -80,8 +80,12 @@ void ASpazInvaderzGameModeBase::Tick(float DeltaSeconds)
         //EnemyMoveDirection = FMath::FloorToInt(FMath::FRandRange(1.f,4.f));
         EnemyTurnTimer = 0.f;
     }
-    ReturnDead();
-
+    // Runs a check on Return Dead
+    if (ReturnDead()) {
+        UE_LOG(LogTemp, Warning, TEXT("YOU WIN"));
+        UWorld* w = GetWorld();
+        UGameplayStatics::OpenLevel(w, TEXT("LVL_WinScreen"));
+    }
     
 }
 

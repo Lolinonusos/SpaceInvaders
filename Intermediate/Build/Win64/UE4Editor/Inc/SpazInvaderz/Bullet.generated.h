@@ -74,7 +74,7 @@ public: \
 	FORCEINLINE static uint32 __PPO__TimeToDespawn() { return STRUCT_OFFSET(ABullet, TimeToDespawn); } \
 	FORCEINLINE static uint32 __PPO__TimeLived() { return STRUCT_OFFSET(ABullet, TimeLived); } \
 	FORCEINLINE static uint32 __PPO__BulletFire() { return STRUCT_OFFSET(ABullet, BulletFire); } \
-	FORCEINLINE static uint32 __PPO__BulletSound() { return STRUCT_OFFSET(ABullet, BulletSound); } \
+	FORCEINLINE static uint32 __PPO__BulletHit() { return STRUCT_OFFSET(ABullet, BulletHit); } \
 	FORCEINLINE static uint32 __PPO__BulletMesh() { return STRUCT_OFFSET(ABullet, BulletMesh); }
 
 

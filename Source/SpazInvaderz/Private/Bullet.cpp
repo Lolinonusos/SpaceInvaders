@@ -32,6 +32,7 @@ void ABullet::BeginPlay()
 {
 	Super::BeginPlay();
 	
+
 }
 
 // Called every frame
@@ -64,7 +65,10 @@ void ABullet::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherA
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), BulletFire, GetTransform(), true);
 
 		// SoundFX
-		UGameplayStatics::PlaySoundAtLocation(GetWorld(), BulletSound, GetActorLocation());
+		//UGameplayStatics::PlaySoundAtLocation(GetWorld(), BulletSound, GetActorLocation());
+		UGameplayStatics::PlaySound2D(World, BulletHit, 1.f, 1.f, 0.f, 0);
+
+
 
 		// Destroy Bullet
 		Destroy();

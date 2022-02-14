@@ -8,6 +8,9 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 #ifdef SPAZINVADERZ_PlayerShip_generated_h
 #error "PlayerShip.generated.h already included, missing '#pragma once' in PlayerShip.h"
 #endif
@@ -16,6 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_SPARSE_DATA
 #define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execOnOverlap); \
 	DECLARE_FUNCTION(execResetLocation); \
 	DECLARE_FUNCTION(execGetBulletIntText); \
 	DECLARE_FUNCTION(execUpdateBullet); \
@@ -25,6 +29,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define SpaceInvaders_Source_SpazInvaderz_Public_PlayerShip_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnOverlap); \
 	DECLARE_FUNCTION(execResetLocation); \
 	DECLARE_FUNCTION(execGetBulletIntText); \
 	DECLARE_FUNCTION(execUpdateBullet); \

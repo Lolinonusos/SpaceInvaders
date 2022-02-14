@@ -38,7 +38,7 @@ private:
 	UParticleSystem* BulletFire = nullptr;
 
 	UPROPERTY(EditAnywhere, Category = Bullet)
-	USoundBase* BulletSound = nullptr;
+	USoundBase* BulletHit = nullptr;
 
 	UPROPERTY(EditAnywhere, Category = Bullet)
 		UStaticMeshComponent* BulletMesh = nullptr;

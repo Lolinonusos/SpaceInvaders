@@ -5,6 +5,7 @@
 #include "GameFramework/PlayerInput.h"
 #include "Components/InputComponent.h"
 #include "bullet.h"
+#include "Alien.h"
 #include "Kismet/GameplayStatics.h"
 #include "Engine/World.h"
 #include "Components/BoxComponent.h"
@@ -12,6 +13,7 @@
 #include "Engine/Engine.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "TimerManager.h"
+
 
 // Sets default values
 APlayerShip::APlayerShip()
@@ -21,6 +23,9 @@ APlayerShip::APlayerShip()
 
 	PlayerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PlayerMesh"));
 	SetRootComponent(PlayerMesh);
+
+	CollisionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("CollisionBox"));
+	CollisionBox->SetupAttachment(GetRootComponent());
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->bUsePawnControlRotation = false;
@@ -72,6 +77,15 @@ void APlayerShip::BeginPlay()
 
 	InitLocation = PlayerMesh->GetComponentLocation();
 	
+	CollisionBox = this->FindComponentByClass<UBoxComponent>();
+
+	if (CollisionBox) {
+		CollisionBox->OnComponentBeginOverlap.AddDynamic(this, &APlayerShip::OnOverlap);
+	}
+	else {
+		UE_LOG(LogTemp, Warning, TEXT("Collision box not found"));
+	}
+
 }
 
 // Called every frame
@@ -208,6 +222,18 @@ void APlayerShip::Dash()
 	if (bDash)
 	{
 		DashSpeed = 30.f;
+	}
+}
+
+void APlayerShip::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherbodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (OtherActor->IsA(AAlien::StaticClass()))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Enemy hit ship"));
+
+		// Changes levels from gaming to lose screen
+		UWorld* l = GetWorld();
+		UGameplayStatics::OpenLevel(l, TEXT("LVL_LoseScreen"));
 	}
 }
 
