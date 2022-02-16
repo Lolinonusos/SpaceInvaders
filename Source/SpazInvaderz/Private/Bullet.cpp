@@ -66,6 +66,7 @@ void ABullet::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherA
 
 		// SoundFX
 		//UGameplayStatics::PlaySoundAtLocation(GetWorld(), BulletSound, GetActorLocation());
+		UWorld* World = GetWorld();
 		UGameplayStatics::PlaySound2D(World, BulletHit, 1.f, 1.f, 0.f, 0);
 
 

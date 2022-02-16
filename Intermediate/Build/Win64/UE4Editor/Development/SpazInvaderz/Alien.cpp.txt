@@ -1,6 +1,6 @@
-D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Definitions.SpazInvaderz.h
-D:\Unreal projects\SpaceInvaders\Source\SpazInvaderz\Public\Alien.h
-D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Inc\SpazInvaderz\Alien.generated.h
+C:\Users\linus\Desktop\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Definitions.SpazInvaderz.h
+C:\Users\linus\Desktop\Unreal projects\SpaceInvaders\Source\SpazInvaderz\Public\Alien.h
+C:\Users\linus\Desktop\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Inc\SpazInvaderz\Alien.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/BoxComponent.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/ShapeComponent.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ShapeComponent.generated.h

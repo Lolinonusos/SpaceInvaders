@@ -93,6 +93,10 @@ void EmptyLinkFunctionForGeneratedCodeSpazInvaderzGameModeBase() {}
 		static void NewProp_bAllDead_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bAllDead;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_WaveNumber_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_WaveNumber;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AlienBP_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_AlienBP;
@@ -139,6 +143,13 @@ void EmptyLinkFunctionForGeneratedCodeSpazInvaderzGameModeBase() {}
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_bAllDead = { "bAllDead", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(ASpazInvaderzGameModeBase), &Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_bAllDead_SetBit, METADATA_PARAMS(Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_bAllDead_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_bAllDead_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_WaveNumber_MetaData[] = {
+		{ "Category", "Spawning" },
+		{ "ModuleRelativePath", "SpazInvaderzGameModeBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_WaveNumber = { "WaveNumber", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASpazInvaderzGameModeBase, WaveNumber), METADATA_PARAMS(Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_WaveNumber_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_WaveNumber_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_AlienBP_MetaData[] = {
 		{ "Category", "Spawning" },
 		{ "ModuleRelativePath", "SpazInvaderzGameModeBase.h" },
@@ -155,6 +166,7 @@ void EmptyLinkFunctionForGeneratedCodeSpazInvaderzGameModeBase() {}
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_ArraySize,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_bAllDead,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_WaveNumber,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_AlienBP,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpazInvaderzGameModeBase_Statics::NewProp_SpawnDelay,
 	};
@@ -185,7 +197,7 @@ void EmptyLinkFunctionForGeneratedCodeSpazInvaderzGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASpazInvaderzGameModeBase, 3559235039);
+	IMPLEMENT_CLASS(ASpazInvaderzGameModeBase, 3910141014);
 	template<> SPAZINVADERZ_API UClass* StaticClass<ASpazInvaderzGameModeBase>()
 	{
 		return ASpazInvaderzGameModeBase::StaticClass();

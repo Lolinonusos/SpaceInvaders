@@ -35,6 +35,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool ReturnDead();
 
+	UPROPERTY(EditAnywhere, Category = "Spawning")
+	int WaveNumber;
+
 private:
 
 	UPROPERTY(EditAnywhere, Category = "Spawning")
