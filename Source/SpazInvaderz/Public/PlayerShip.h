@@ -101,6 +101,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
 	USoundBase* ReloadSound = nullptr;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PlayerMesh)
+	USoundBase* DashSound = nullptr;
+
 	// This line gives acces to other cpp classes
 	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<AActor> ActorToSpawn;

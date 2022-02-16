@@ -1,0 +1,25 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-SpazInvaderz-0107.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\SpazInvaderzEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Alien.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Brick.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Bullet.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\DisplayStats.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\PlayerShip.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\SpazInvaderz.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\SpazInvaderzGameModeBase.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Alien.gen.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Brick.gen.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Bullet.gen.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\DisplayStats.gen.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\PlayerShip.gen.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\SpazInvaderz.init.gen.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\SpazInvaderzGameModeBase.gen.cpp.obj"
+"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Default.rc2.res"
+/OUT:"D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\UE4Editor-SpazInvaderz-0107.lib"

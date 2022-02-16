@@ -101,6 +101,9 @@ void APlayerShip::Tick(float DeltaTime)
 
 	if (bDash)
 	{
+		UWorld* NewWorld = GetWorld();
+		UGameplayStatics::PlaySound2D(NewWorld, DashSound, 1.f, 1.f, 0.f, 0);
+
 		if (DashSpeed > 0)
 		{
 			DashSpeed -= 1.5f;
@@ -110,7 +113,7 @@ void APlayerShip::Tick(float DeltaTime)
 		DashTimer += DeltaTime;
 
 		//UE_LOG(LogTemp, Error, TEXT("DashTimer is %f "), DashTimer);
-		if (DashTimer >= 0.5f)
+		if (DashTimer >= 3.f)
 		{
 			DashSpeed = 0;
 			DashTimer = 0.f;
@@ -218,10 +221,14 @@ void APlayerShip::MoveYAxis(float Value)
 
 void APlayerShip::Dash()
 {
-	bDash = true;
-	if (bDash)
+	if (DashTimer == 0)
 	{
-		DashSpeed = 30.f;
+		bDash = true;
+
+		if (bDash)
+		{
+			DashSpeed = 30.f;
+		}
 	}
 }
 

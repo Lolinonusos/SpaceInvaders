@@ -1,5 +1,5 @@
-C:\Users\linus\Desktop\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Definitions.SpazInvaderz.h
+D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Development\SpazInvaderz\Definitions.SpazInvaderz.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-C:\Users\linus\Desktop\Unreal projects\SpaceInvaders\Source\SpazInvaderz/Public/Brick.h
-C:\Users\linus\Desktop\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Inc\SpazInvaderz\Brick.generated.h
+D:\Unreal projects\SpaceInvaders\Source\SpazInvaderz/Public/Brick.h
+D:\Unreal projects\SpaceInvaders\Intermediate\Build\Win64\UE4Editor\Inc\SpazInvaderz\Brick.generated.h
