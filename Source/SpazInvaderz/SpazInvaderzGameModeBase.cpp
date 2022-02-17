@@ -32,7 +32,7 @@ void ASpazInvaderzGameModeBase::BeginPlay()
 				ArraySize++;
 			}
 		}
-	UE_LOG(LogTemp, Error, TEXT("Enemy Array is: %d "), EnemyArray.Num());
+	    UE_LOG(LogTemp, Error, TEXT("Enemy Array is: %d "), EnemyArray.Num());
 	}
 }
 
