@@ -101,8 +101,9 @@ void APlayerShip::Tick(float DeltaTime)
 
 	if (bDash)
 	{
-		UWorld* NewWorld = GetWorld();
-		UGameplayStatics::PlaySound2D(NewWorld, DashSound, 1.f, 1.f, 0.f, 0);
+		// Enable for awesome SFX
+		//UWorld* NewWorld = GetWorld();
+		//UGameplayStatics::PlaySound2D(NewWorld, DashSound, 1.f, 1.f, 0.f, 0);
 
 		if (DashSpeed > 0)
 		{
@@ -223,6 +224,8 @@ void APlayerShip::Dash()
 {
 	if (DashTimer == 0)
 	{
+		UWorld* NewWorld = GetWorld();
+		UGameplayStatics::PlaySound2D(NewWorld, DashSound, 1.f, 1.f, 0.f, 0);
 		bDash = true;
 
 		if (bDash)
