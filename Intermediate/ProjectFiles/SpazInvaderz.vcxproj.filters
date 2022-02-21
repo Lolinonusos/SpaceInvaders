@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\SpazInvaderz.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{B6D6A239-58A7-42A9-8D65-221629DFC71A}</UniqueIdentifier>
+      <UniqueIdentifier>{ACE39986-6F99-4DE4-9282-193FA59FE0BE}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\SpazInvaderz.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{6670858A-11F9-46E5-AFA5-3CD159889233}</UniqueIdentifier>
+      <UniqueIdentifier>{7017CC4F-D42D-49A6-9806-C8181F66C075}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -29,7 +29,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\SpazInvaderz">
-      <UniqueIdentifier>{15F6C92C-56BF-442C-88BE-2B13EF61D684}</UniqueIdentifier>
+      <UniqueIdentifier>{1B7BE8B9-AAD3-460C-97FD-6B3921DF0826}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\SpazInvaderz\SpazInvaderz.Build.cs">
       <Filter>Source\SpazInvaderz</Filter>
@@ -47,7 +47,7 @@
       <Filter>Source\SpazInvaderz</Filter>
     </ClInclude>
     <Filter Include="Source\SpazInvaderz\Private">
-      <UniqueIdentifier>{B5749DFD-79F2-4CD6-819A-08B610E77544}</UniqueIdentifier>
+      <UniqueIdentifier>{B5396DE0-9432-488F-8D47-0052CC1A4233}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\SpazInvaderz\Private\Alien.cpp">
       <Filter>Source\SpazInvaderz\Private</Filter>
@@ -65,7 +65,7 @@
       <Filter>Source\SpazInvaderz\Private</Filter>
     </ClCompile>
     <Filter Include="Source\SpazInvaderz\Public">
-      <UniqueIdentifier>{AA43E22A-924C-42E6-BD27-C1EA82ABAD80}</UniqueIdentifier>
+      <UniqueIdentifier>{30B1EEF1-02F5-4C64-B911-32AF1E2328E8}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\SpazInvaderz\Public\Alien.h">
       <Filter>Source\SpazInvaderz\Public</Filter>

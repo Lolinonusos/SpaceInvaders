@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "SpazInvaderz",
-			"Path": "D:\\Unreal projects\\SpaceInvaders\\Source\\SpazInvaderz.Target.cs",
+			"Path": "C:\\Users\\linus\\Desktop\\Unreal projects\\SpaceInvaders\\Source\\SpazInvaderz.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "SpazInvaderzEditor",
-			"Path": "D:\\Unreal projects\\SpaceInvaders\\Source\\SpazInvaderzEditor.Target.cs",
+			"Path": "C:\\Users\\linus\\Desktop\\Unreal projects\\SpaceInvaders\\Source\\SpazInvaderzEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]
