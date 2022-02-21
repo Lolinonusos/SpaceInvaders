@@ -43,7 +43,7 @@ void ASpazInvaderzGameModeBase::Tick(float DeltaSeconds)
     // Movement pattern, currently it changes movement based on time
     EnemyTimer += DeltaSeconds;
     EnemyTurnTimer += DeltaSeconds;
-        UE_LOG(LogTemp, Error, TEXT("Enemy Move Logic Running"));
+    UE_LOG(LogTemp, Error, TEXT("Enemy Move Logic Running"));
     for (int i = 0; i < EnemyArray.Num(); i++)
     {
         if (EnemyArray[i]->DeleteThisEnemy) {
